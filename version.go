@@ -1,17 +1,7 @@
 package goparsebgp
 
-// #cgo CFLAGS: -I./build/include
-// #cgo LDFLAGS: ./build/lib/libparsebgp.a
 // #include <parsebgp.h>
-//
-// #define STR(s) _STR(s)
-// #define _STR(s) #s
-//
-// static char* parsebgp_version() {
-//   return STR(LIBPARSEBGP_MAJOR_VERSION) "."
-//          STR(LIBPARSEBGP_MID_VERSION) "."
-//          STR(LIBPARSEBGP_MINOR_VERSION);
-// }
+// #include "bridge.h"
 import "C"
 
 var (
@@ -35,7 +25,7 @@ type PkgVersions struct {
 var (
 	Version = PkgVersions{
 		LibParseBGP: VersionDetails{
-			Version: C.GoString(C.parsebgp_version()),
+			Version: C.GoString(C.gpb_parsebgp_version()),
 			Commit:  _LibParseBGPCommit,
 		},
 		GoParseBGP: VersionDetails{
