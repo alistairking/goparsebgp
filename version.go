@@ -1,6 +1,7 @@
 package goparsebgp
 
-// #cgo LDFLAGS: -lparsebgp
+// #cgo CFLAGS: -I./build/include
+// #cgo LDFLAGS: ./build/lib/libparsebgp.a
 // #include <parsebgp.h>
 //
 // #define STR(s) _STR(s)
