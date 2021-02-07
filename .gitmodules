@@ -1,0 +1,3 @@
+[submodule "libparsebgp"]
+	path = libparsebgp
+	url = git@github.com:CAIDA/libparsebgp.git
